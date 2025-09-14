@@ -2,6 +2,7 @@
 
 import { Zap, Eye, Users, CalendarCheck} from 'lucide-react';
 import { InteractiveImageShowcase } from '@/components/InteractiveImageShowcase'; // <-- 1. IMPORTA EL NUEVO COMPONENTE
+import Link from 'next/link'; // Importamos el componente Link
 
 // --- Componente de Tarjeta de Característica ---
 // Para no repetir código, creamos un pequeño componente para las características.
@@ -31,12 +32,12 @@ export default function LandingPage() {
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
               CAIBook centraliza la reserva de salas de estudio, la coordinación de eventos y la gestión de grupos estudiantiles en una sola plataforma ágil y moderna.
             </p>
-            <a
+            <Link
               href="/dashboard" // TODO: Apuntar al dashboard si el usuario está logueado, o al login
               className="bg-brand-primary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-colors duration-300 inline-block"
             >
               Acceder a la Plataforma
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -111,12 +112,12 @@ export default function LandingPage() {
             <div className="container mx-auto px-6 py-20 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-white">¿Listo para optimizar tu tiempo?</h2>
                 <p className="text-lg text-slate-300 mt-2 mb-8 max-w-2xl mx-auto">Únete a la nueva era de gestión de espacios en Ingeniería UC.</p>
-                <a
-                    href="/LogIn" // TODO: Apuntar al login
-                    className="bg-slate-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-colors duration-300 inline-block"
+                <Link
+                  href="/login" // CORREGIDO: La ruta debe ser en minúsculas para coincidir con la carpeta
+                  className="bg-brand-primary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-colors duration-300 inline-block"
                 >
-                    Comenzar ahora
-                </a>
+                  Comenzar ahora
+              </Link>
             </div>
         </section>
       </main>
