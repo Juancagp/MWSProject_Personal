@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Link from 'next/link'; // Importamos el componente Link
 import { School } from "lucide-react";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
