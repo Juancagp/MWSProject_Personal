@@ -52,6 +52,7 @@ export default function RootLayout({
           {/* El contenido de cada página se renderizará aquí */}
           <main className="flex-grow">
             {children}
+            <Analytics />
           </main>
 
           {/* 6. Footer (Ahora vive aquí) */}
