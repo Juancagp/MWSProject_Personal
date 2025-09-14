@@ -1,9 +1,7 @@
 // app/page.tsx
 
-import { Zap, Eye, Users, CalendarCheck, ArrowRight, School } from 'lucide-react';
+import { Zap, Eye, Users, CalendarCheck} from 'lucide-react';
 import { InteractiveImageShowcase } from '@/components/InteractiveImageShowcase'; // <-- 1. IMPORTA EL NUEVO COMPONENTE
-
-import Image from 'next/image';
 
 // --- Componente de Tarjeta de Característica ---
 // Para no repetir código, creamos un pequeño componente para las características.

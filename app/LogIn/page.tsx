@@ -7,7 +7,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Input } from '@/components/ui/Input';
 import { School } from 'lucide-react';
-import type { Metadata } from 'next';
 
 // Aunque es un componente de cliente, podemos exportar metadata estática
 // (Esta es una característica más avanzada, pero es bueno saberla)

@@ -2,8 +2,9 @@
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from 'next/link'; // Importamos el componente Link
+import { School } from "lucide-react";
 import "./globals.css";
-import { School } from "lucide-react"; // <-- ¡No olvides importar el ícono!
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,33 +21,37 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
-        <div className="bg-brand-light text-brand-dark">
+        <div className="bg-brand-light text-brand-dark flex flex-col min-h-screen">
           {/* 1. Barra de Navegación (Ahora vive aquí) */}
           <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-              <a href="/Landing" className="flex items-center gap-2"> {/* Apunta a la raíz */}
+              {/* CORRECCIÓN 1: Se reemplaza <a> por <Link> para la navegación interna */}
+              <Link href="/" className="flex items-center gap-2">
                  <School className="h-8 w-8 text-brand-primary" />
                  <span className="text-2xl font-bold text-brand-dark">CAIBook</span>
-              </a>
+              </Link>
               <div className="flex items-center gap-6 md:gap-8">
-                <a href="/#features" className="hidden md:block font-medium text-slate-600 hover:text-brand-primary transition-colors duration-300">
+                {/* CORRECCIÓN 2: Se usa <Link> y se corrigen las rutas a minúsculas */}
+                <Link href="/#features" className="hidden md:block font-medium text-slate-600 hover:text-brand-primary transition-colors duration-300">
                   Características
-                </a>
-                <a href="/About" className="hidden md:block font-medium text-slate-600 hover:text-brand-primary transition-colors duration-300">
+                </Link>
+                <Link href="/about" className="hidden md:block font-medium text-slate-600 hover:text-brand-primary transition-colors duration-300">
                   Sobre Nosotros
-                </a>
-                <a
-              href="/LogIn"
-              className="bg-slate-600 text-white font-bold py-2 px-6 rounded-full hover:bg-slate-800 transition-colors duration-300"
-            >
-              Iniciar Sesión
-            </a>
+                </Link>
+                <Link
+                  href="/login"
+                  className="bg-slate-600 text-white font-bold py-2 px-6 rounded-full hover:bg-slate-800 transition-colors duration-300"
+                >
+                  Iniciar Sesión
+                </Link>
               </div>
             </nav>
           </header>
 
           {/* El contenido de cada página se renderizará aquí */}
-          {children}
+          <main className="flex-grow">
+            {children}
+          </main>
 
           {/* 6. Footer (Ahora vive aquí) */}
           <footer className="bg-brand-dark text-white">
