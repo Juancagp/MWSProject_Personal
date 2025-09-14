@@ -35,11 +35,11 @@ export default function RootLayout({
                 <Link href="/#features" className="hidden md:block font-medium text-slate-600 hover:text-brand-primary transition-colors duration-300">
                   Características
                 </Link>
-                <Link href="/about" className="hidden md:block font-medium text-slate-600 hover:text-brand-primary transition-colors duration-300">
+                <Link href="/About" className="hidden md:block font-medium text-slate-600 hover:text-brand-primary transition-colors duration-300">
                   Sobre Nosotros
                 </Link>
                 <Link
-                  href="/login"
+                  href="/LogIn"
                   className="bg-slate-600 text-white font-bold py-2 px-6 rounded-full hover:bg-slate-800 transition-colors duration-300"
                 >
                   Iniciar Sesión
